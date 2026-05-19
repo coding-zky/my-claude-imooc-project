@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/zky/.claude/**)",
+      "Read(//Users/zky/.claude/skills/**)",
+      "Bash(find /Users/zky -path \"*/.claude/skills/*\" -name \"*.md\" 2>/dev/null | head -50)",
+      "Read(//Users/zky/**)",
+      "Bash(python3 /Users/zky/.claude/skills/ui-ux-pro-max/scripts/search.py \"personal finance tracker minimal warm trustworthy fintech\" --design-system -p \"记账本\" -f markdown)"
+    ]
+  }
+}

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#98805d",
+                    "on-secondary-fixed": "#2c1700",
+                    "surface-container-low": "#f6f3f5",
+                    "on-tertiary-fixed": "#271901",
+                    "on-secondary-container": "#734400",
+                    "tertiary-fixed-dim": "#dec29a",
+                    "surface": "#fcf8fa",
+                    "on-surface-variant": "#45464d",
+                    "surface-tint": "#565e74",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "primary-fixed": "#dae2fd",
+                    "tertiary": "#000000",
+                    "surface-variant": "#e4e2e4",
+                    "on-tertiary-fixed-variant": "#574425",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#683d00",
+                    "secondary-container": "#ffb157",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#bec6e0",
+                    "secondary": "#895200",
+                    "on-error-container": "#93000a",
+                    "primary": "#000000",
+                    "outline-variant": "#c6c6cd",
+                    "on-surface": "#1b1b1d",
+                    "secondary-fixed-dim": "#ffb86a",
+                    "surface-container-highest": "#e4e2e4",
+                    "on-background": "#1b1b1d",
+                    "primary-fixed-dim": "#bec6e0",
+                    "inverse-surface": "#303032",
+                    "tertiary-fixed": "#fcdeb5",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#dcd9db",
+                    "inverse-on-surface": "#f3f0f2",
+                    "surface-container-high": "#eae7e9",
+                    "outline": "#76777d",
+                    "background": "#fcf8fa",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#fcf8fa",
+                    "surface-container": "#f0edef",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#271901",
+                    "secondary-fixed": "#ffdcbc",
+                    "on-primary-fixed": "#131b2e",
+                    "on-error": "#ffffff",
+                    "primary-container": "#131b2e",
+                    "on-primary-container": "#7c839b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "margin": "32px",
+                    "stack-lg": "32px",
+                    "gutter": "24px",
+                    "unit": "4px",
+                    "stack-md": "16px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "data-mono": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "body-sm": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "data-mono": ["16px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .profile-card-gradient {
+            background: linear-gradient(135deg, #131b2e 0%, #1E293B 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- Side Navigation Shell -->
+<aside class="fixed left-0 top-0 h-full w-[280px] bg-surface border-r border-outline-variant flex flex-col py-8 px-6 z-50">
+<div class="mb-12">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Wealth Management</h1>
+<p class="text-on-surface-variant font-body-sm opacity-70">Private Banking</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-4 py-3 px-4 rounded-xl text-on-surface-variant font-medium hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-lg">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-xl text-on-surface-variant font-medium hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-body-lg">Statistics</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-xl text-on-surface-variant font-medium hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-body-lg">Budget</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-xl text-primary font-bold border-r-4 border-secondary bg-surface-container" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-body-lg">Profile</span>
+</a>
+</nav>
+<button class="mt-auto bg-primary text-on-primary py-4 px-6 rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined">add</span>
+<span>Quick Add</span>
+</button>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-[280px] min-h-screen">
+<!-- Top App Bar Shell -->
+<header class="flex justify-between items-center w-full h-20 px-gutter bg-surface-container-lowest shadow-sm sticky top-0 z-40">
+<div class="flex items-center bg-surface-container px-4 py-2 rounded-full w-96">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-sm w-full ml-2" placeholder="搜索功能或设置..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-secondary transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-surface-container-lowest"></span>
+</button>
+<button class="text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant"></div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold text-body-sm active:opacity-80 transition-opacity">
+                    Add Transaction
+                </button>
+</div>
+</header>
+<!-- Profile Content Grid -->
+<div class="max-w-[1200px] mx-auto p-margin">
+<!-- User Header Card -->
+<section class="profile-card-gradient rounded-3xl p-8 mb-stack-lg flex items-center justify-between shadow-lg relative overflow-hidden">
+<!-- Decorative background pattern -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary opacity-10 rounded-full blur-[80px] -mr-32 -mt-32"></div>
+<div class="flex items-center gap-8 relative z-10">
+<div class="relative">
+<img alt="User profile avatar" class="w-24 h-24 rounded-full border-4 border-secondary-container bg-surface-container-lowest" data-alt="A professional high-resolution avatar of a modern Asian professional man with a friendly expression. The character is styled in a minimalist, clean vector art aesthetic consistent with high-end financial app branding. He is wearing a dark navy suit that matches the deep slate color palette. The background is a soft, blurred office environment with warm gold highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmdbZD9Ks_X6eGCR0g4WH2AJ2TGkuRGX4bnsiKZxjKAavaK7fDWnNBUBq1yJXPbLNJ_XXhmljETXU31SM2viBxiBHb8mo40v_IJzZhweyf3OTAO0mUeBpQUgo3_qsroOYOYBc2RlCoVCXbxY3p8pwXqg8WabetmuRWP8AGo3YWWlpsxVaXUlWH1839l1JJQDC7YGJn3HmpKlk8uGOJToYNXRVf303qiQppbn04ZMs4nDD2h1bPtDW1F51W8i0hSy3dzsd2XTXaZg_v"/>
+<button class="absolute bottom-0 right-0 bg-secondary-container text-on-secondary-container p-1.5 rounded-full border-4 border-[#131b2e] flex items-center justify-center">
+<span class="material-symbols-outlined !text-[16px]">edit</span>
+</button>
+</div>
+<div>
+<h2 class="text-on-primary font-display-lg text-display-lg mb-1">小明</h2>
+<div class="flex items-center gap-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-caps text-label-caps">尊享会员</span>
+<span class="text-on-primary-container text-body-sm opacity-80">ID: 8829-0192</span>
+</div>
+</div>
+</div>
+<div class="flex gap-4 relative z-10">
+<div class="bg-white/5 backdrop-blur-md border border-white/10 p-4 rounded-2xl min-w-[140px]">
+<p class="text-on-primary-container font-label-caps text-label-caps mb-2 opacity-60">账户净资产</p>
+<p class="text-on-primary font-headline-md text-headline-md">¥2,480,000</p>
+</div>
+<div class="bg-white/5 backdrop-blur-md border border-white/10 p-4 rounded-2xl min-w-[140px]">
+<p class="text-on-primary-container font-label-caps text-label-caps mb-2 opacity-60">本月支出</p>
+<p class="text-secondary-fixed-dim font-headline-md text-headline-md">¥12,840.00</p>
+</div>
+</div>
+</section>
+<!-- Bento Grid Settings Area -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Account Management Section -->
+<div class="col-span-8 space-y-stack-md">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-3xl p-6">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary">manage_accounts</span>
+<h3 class="font-headline-md text-headline-md">账号管理</h3>
+</div>
+<div class="space-y-4">
+<!-- List Item -->
+<div class="flex items-center justify-between p-4 rounded-2xl hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">person_edit</span>
+</div>
+<div>
+<p class="font-body-lg font-bold">修改个人资料</p>
+<p class="text-on-surface-variant text-body-sm">更新您的头像、昵称及联系方式</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+<!-- List Item -->
+<div class="flex items-center justify-between p-4 rounded-2xl hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">security</span>
+</div>
+<div>
+<p class="font-body-lg font-bold">安全设置</p>
+<p class="text-on-surface-variant text-body-sm">PIN 码状态：<span class="text-secondary font-bold">已开启</span></p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+<!-- List Item -->
+<div class="flex items-center justify-between p-4 rounded-2xl hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">database</span>
+</div>
+<div>
+<p class="font-body-lg font-bold">数据管理</p>
+<p class="text-on-surface-variant text-body-sm">导出 CSV 报表、执行备份与恢复</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="px-3 py-1 bg-surface-container-high rounded-lg text-label-caps hover:bg-outline-variant transition-colors">导出</button>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform self-center">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Logout Button (Task-Focused suppression of general nav UI) -->
+<button class="w-full py-5 rounded-3xl border-2 border-error/20 text-error font-bold flex items-center justify-center gap-2 hover:bg-error/5 active:scale-[0.99] transition-all">
+<span class="material-symbols-outlined">logout</span>
+<span>退出当前登录</span>
+</button>
+</div>
+<!-- General Settings Section -->
+<div class="col-span-4">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-3xl p-6 h-full">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary">settings_applications</span>
+<h3 class="font-headline-md text-headline-md">通用设置</h3>
+</div>
+<div class="space-y-6">
+<!-- Language Setting -->
+<div class="p-4 rounded-2xl bg-surface">
+<label class="text-label-caps text-on-surface-variant mb-3 block">语言设置</label>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">language</span>
+<span class="font-body-lg">简体中文</span>
+</div>
+<button class="text-secondary font-bold text-body-sm">切换</button>
+</div>
+</div>
+<!-- Theme Toggle -->
+<div class="p-4 rounded-2xl bg-surface">
+<label class="text-label-caps text-on-surface-variant mb-3 block">主题切换</label>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">light_mode</span>
+<span class="font-body-lg">亮色模式</span>
+</div>
+<div class="w-12 h-6 bg-secondary-container rounded-full relative cursor-pointer p-1">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full shadow-sm"></div>
+</div>
+</div>
+</div>
+<!-- Quick Stats Card in Sidebar Area -->
+<div class="mt-8 p-6 rounded-2xl border-t-4 border-secondary bg-surface-container-low">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="font-bold text-body-sm">会员特权</span>
+</div>
+<ul class="space-y-3 text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined !text-[18px] text-emerald-600">check_circle</span>
+<span>专属私人理财顾问响应</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined !text-[18px] text-emerald-600">check_circle</span>
+<span>无限次高级财务报表导出</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined !text-[18px] text-emerald-600">check_circle</span>
+<span>实时全球股市动态分析</span>
+</li>
+</ul>
+<button class="w-full mt-6 py-3 border border-secondary text-secondary rounded-xl font-bold hover:bg-secondary/5 transition-colors">
+                                    管理会员方案
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Branding Footer Area -->
+<footer class="mt-stack-lg text-center opacity-30 pb-12">
+<p class="font-headline-md text-headline-md font-bold mb-1">Financial Suite</p>
+<p class="text-body-sm">© 2024 Private Banking Global Service. All Rights Reserved.</p>
+</footer>
+</div>
+</main>
+</body></html>

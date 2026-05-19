@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wealth Management - Statistics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#574425",
+                    "surface-container": "#f0edef",
+                    "primary-fixed-dim": "#bec6e0",
+                    "outline": "#76777d",
+                    "surface-container-low": "#f6f3f5",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#000000",
+                    "tertiary-container": "#271901",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed": "#2c1700",
+                    "tertiary-fixed-dim": "#dec29a",
+                    "primary": "#000000",
+                    "primary-container": "#131b2e",
+                    "surface": "#fcf8fa",
+                    "on-surface-variant": "#45464d",
+                    "on-secondary-container": "#734400",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#f3f0f2",
+                    "on-tertiary-container": "#98805d",
+                    "secondary": "#895200",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#7c839b",
+                    "surface-variant": "#e4e2e4",
+                    "surface-dim": "#dcd9db",
+                    "background": "#fcf8fa",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#eae7e9",
+                    "surface-container-highest": "#e4e2e4",
+                    "secondary-container": "#ffb157",
+                    "surface-bright": "#fcf8fa",
+                    "secondary-fixed": "#ffdcbc",
+                    "on-secondary-fixed-variant": "#683d00",
+                    "inverse-primary": "#bec6e0",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#565e74",
+                    "outline-variant": "#c6c6cd",
+                    "on-surface": "#1b1b1d",
+                    "on-tertiary-fixed": "#271901",
+                    "on-background": "#1b1b1d",
+                    "inverse-surface": "#303032",
+                    "primary-fixed": "#dae2fd",
+                    "secondary-fixed-dim": "#ffb86a",
+                    "on-primary-fixed": "#131b2e",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "tertiary-fixed": "#fcdeb5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "stack-sm": "8px",
+                    "unit": "4px",
+                    "margin": "32px",
+                    "stack-lg": "32px",
+                    "container-max": "1440px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "body-sm": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "data-mono": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "data-mono": ["16px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcf8fa; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .tabular-nums { font-variant-numeric: tabular-nums; }
+        .donut-chart {
+            background: conic-gradient(
+                #000000 0% 40%, 
+                #895200 40% 65%, 
+                #45464d 65% 85%, 
+                #c6c6cd 85% 100%
+            );
+            border-radius: 50%;
+            position: relative;
+        }
+        .donut-chart::before {
+            content: "";
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            width: 50%;
+            height: 50%;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- SideNavBar Anchor -->
+<aside class="fixed left-0 top-0 h-full w-[280px] bg-surface border-r border-outline-variant flex flex-col h-full py-8 px-6">
+<div class="mb-10">
+<h1 class="font-headline-md text-headline-md font-bold text-primary mb-1">Wealth Management</h1>
+<p class="font-body-sm text-on-surface-variant">Private Banking</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container transition-colors text-on-surface-variant font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-lg text-body-lg">Dashboard</span>
+</a>
+<!-- Statistics Active -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-primary font-bold border-r-4 border-secondary hover:bg-surface-container transition-colors bg-surface-container-low" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-body-lg text-body-lg">Statistics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container transition-colors text-on-surface-variant font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-body-lg text-body-lg">Budget</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container transition-colors text-on-surface-variant font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-body-lg text-body-lg">Profile</span>
+</a>
+</nav>
+<div class="mt-auto flex items-center gap-4 p-4 rounded-xl bg-surface-container-low border border-outline-variant">
+<img alt="User profile avatar" class="w-10 h-10 rounded-full bg-surface-variant" data-alt="A professional close-up headshot portrait of a senior financial advisor in a tailored navy blue suit. The background is a blurred high-end office with soft morning light filtering through large windows, maintaining a light-mode corporate aesthetic. The mood is trustworthy and sophisticated, using a clean color palette of whites and deep blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq4AyC--K6MhLpTDjG-N-xURGReILzXwLPdQOh6gjWiAnrUNRRUlymwLWuksIVRMgi_KlXhfj6OXAI3wpsuelZpO8kg_EhiH1GztpLTGB40Kh7Dc7ert8LX_BEB_Dxpi7OGyg5XveKR97IZ71hJ6WQ8HX8U9lIEi76a5AEpUp0lRkadPmeayuLFr8Zem0D47a9dkeaZidp-tthYrB3EqhHQhIVjcOubvTZV44bjFtR2XNxQiW11KTV9QIxXpjqRw5OSRWAWa3qhWB8"/>
+<div>
+<p class="font-data-mono text-primary">Alex Mercer</p>
+<p class="font-body-sm text-on-surface-variant">Platinum Member</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-[280px] min-h-screen p-margin max-w-[calc(1440px-280px)]">
+<!-- Header Section -->
+<header class="flex justify-between items-center mb-stack-lg">
+<div>
+<h2 class="font-display-lg text-display-lg text-primary tracking-tight">收支分析</h2>
+<p class="font-body-lg text-on-surface-variant mt-2">Analysis for your monthly cash flow and expenditures.</p>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-lowest border border-outline-variant p-2 rounded-full shadow-sm">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<span class="font-data-mono text-body-lg px-4">2023年10月</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Charts Section: Pie Chart -->
+<section class="col-span-12 lg:col-span-7 bg-surface-container-lowest border border-outline-variant rounded-xl p-8">
+<div class="flex justify-between items-start mb-10">
+<h3 class="font-headline-md text-headline-md text-primary">本月支出分类占比</h3>
+<div class="text-right">
+<p class="font-label-caps text-on-surface-variant uppercase">Total Spending</p>
+<p class="font-display-lg text-display-lg tabular-nums text-primary">¥45,280.00</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-12">
+<!-- Donut Visualization -->
+<div class="relative w-64 h-64 donut-chart flex items-center justify-center shrink-0">
+<div class="z-10 text-center">
+<p class="font-label-caps text-on-surface-variant">Top Category</p>
+<p class="font-headline-md text-primary">Dining</p>
+</div>
+</div>
+<!-- Legend and Data Labels -->
+<div class="flex-1 space-y-6">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="font-body-lg font-bold">Dining</span>
+</div>
+<div class="text-right">
+<p class="font-data-mono text-primary">40%</p>
+<p class="font-body-sm text-on-surface-variant tabular-nums">¥18,112.00</p>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-body-lg font-bold">Transport</span>
+</div>
+<div class="text-right">
+<p class="font-data-mono text-primary">25%</p>
+<p class="font-body-sm text-on-surface-variant tabular-nums">¥11,320.00</p>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="w-3 h-3 rounded-full bg-on-surface-variant"></span>
+<span class="font-body-lg font-bold">Shopping</span>
+</div>
+<div class="text-right">
+<p class="font-data-mono text-primary">20%</p>
+<p class="font-body-sm text-on-surface-variant tabular-nums">¥9,056.00</p>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="w-3 h-3 rounded-full bg-outline-variant"></span>
+<span class="font-body-lg font-bold">Others</span>
+</div>
+<div class="text-right">
+<p class="font-data-mono text-primary">15%</p>
+<p class="font-body-sm text-on-surface-variant tabular-nums">¥6,792.00</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Ranking List Section -->
+<section class="col-span-12 lg:col-span-5 bg-surface-container-lowest border border-outline-variant rounded-xl p-8 flex flex-col">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-headline-md text-headline-md text-primary">分类排行榜</h3>
+<button class="font-label-caps text-secondary underline">VIEW ALL</button>
+</div>
+<div class="flex-1 space-y-8">
+<!-- Rank 1 -->
+<div>
+<div class="flex justify-between items-end mb-2">
+<div class="flex items-center gap-2">
+<span class="font-data-mono text-secondary text-lg">01</span>
+<span class="font-body-lg font-bold">Dining &amp; Fine Catering</span>
+</div>
+<span class="font-data-mono text-primary tabular-nums">¥18,112.00</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 85%;"></div>
+</div>
+</div>
+<!-- Rank 2 -->
+<div>
+<div class="flex justify-between items-end mb-2">
+<div class="flex items-center gap-2">
+<span class="font-data-mono text-secondary text-lg">02</span>
+<span class="font-body-lg font-bold">International Transport</span>
+</div>
+<span class="font-data-mono text-primary tabular-nums">¥11,320.00</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 60%;"></div>
+</div>
+</div>
+<!-- Rank 3 -->
+<div>
+<div class="flex justify-between items-end mb-2">
+<div class="flex items-center gap-2">
+<span class="font-data-mono text-secondary text-lg">03</span>
+<span class="font-body-lg font-bold">Luxury Shopping</span>
+</div>
+<span class="font-data-mono text-primary tabular-nums">¥9,056.00</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 45%;"></div>
+</div>
+</div>
+<!-- Rank 4 -->
+<div>
+<div class="flex justify-between items-end mb-2">
+<div class="flex items-center gap-2">
+<span class="font-data-mono text-secondary text-lg">04</span>
+<span class="font-body-lg font-bold">Health &amp; Wellness</span>
+</div>
+<span class="font-data-mono text-primary tabular-nums">¥4,200.00</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 25%;"></div>
+</div>
+</div>
+<!-- Rank 5 -->
+<div>
+<div class="flex justify-between items-end mb-2">
+<div class="flex items-center gap-2">
+<span class="font-data-mono text-secondary text-lg">05</span>
+<span class="font-body-lg font-bold">Entertainment</span>
+</div>
+<span class="font-data-mono text-primary tabular-nums">¥2,592.00</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 15%;"></div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">trending_up</span>
+<span class="font-body-sm text-on-surface-variant">Spending up 12% from last month</span>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-data-mono text-body-sm hover:opacity-90 transition-opacity">
+                            Export PDF
+                        </button>
+</div>
+</div>
+</section>
+<!-- Bottom Data Table Section -->
+<section class="col-span-12 bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div class="px-8 py-6 border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-primary">Transaction History</h3>
+<div class="flex gap-2">
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps">ALL</span>
+<span class="px-3 py-1 rounded-full bg-surface text-on-surface-variant font-label-caps border border-outline-variant">EXPENSE</span>
+<span class="px-3 py-1 rounded-full bg-surface text-on-surface-variant font-label-caps border border-outline-variant">INCOME</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="px-8 py-4 font-label-caps text-on-surface-variant">DATE</th>
+<th class="px-8 py-4 font-label-caps text-on-surface-variant">CATEGORY</th>
+<th class="px-8 py-4 font-label-caps text-on-surface-variant">DESCRIPTION</th>
+<th class="px-8 py-4 font-label-caps text-on-surface-variant">METHOD</th>
+<th class="px-8 py-4 font-label-caps text-on-surface-variant text-right">AMOUNT</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-low transition-colors h-[56px]">
+<td class="px-8 py-4 font-data-mono text-body-sm">Oct 24, 2023</td>
+<td class="px-8 py-4">
+<span class="px-3 py-1 bg-surface-variant rounded-full font-body-sm">Dining</span>
+</td>
+<td class="px-8 py-4 font-body-lg">Blue Hill at Stone Barns</td>
+<td class="px-8 py-4 font-body-sm text-on-surface-variant">Visa Platinum •••• 9012</td>
+<td class="px-8 py-4 text-right font-data-mono text-error">-¥2,450.00</td>
+</tr>
+<tr class="bg-surface-container-low/30 hover:bg-surface-container-low transition-colors h-[56px]">
+<td class="px-8 py-4 font-data-mono text-body-sm">Oct 23, 2023</td>
+<td class="px-8 py-4">
+<span class="px-3 py-1 bg-surface-variant rounded-full font-body-sm">Transport</span>
+</td>
+<td class="px-8 py-4 font-body-lg">Cathay Pacific Airways</td>
+<td class="px-8 py-4 font-body-sm text-on-surface-variant">Amex Centurion •••• 1005</td>
+<td class="px-8 py-4 text-right font-data-mono text-error">-¥8,200.00</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors h-[56px]">
+<td class="px-8 py-4 font-data-mono text-body-sm">Oct 22, 2023</td>
+<td class="px-8 py-4">
+<span class="px-3 py-1 bg-surface-variant rounded-full font-body-sm">Income</span>
+</td>
+<td class="px-8 py-4 font-body-lg">Quarterly Dividend Payout</td>
+<td class="px-8 py-4 font-body-sm text-on-surface-variant">Savings Account •••• 4421</td>
+<td class="px-8 py-4 text-right font-data-mono text-secondary">+¥12,800.00</td>
+</tr>
+<tr class="bg-surface-container-low/30 hover:bg-surface-container-low transition-colors h-[56px]">
+<td class="px-8 py-4 font-data-mono text-body-sm">Oct 21, 2023</td>
+<td class="px-8 py-4">
+<span class="px-3 py-1 bg-surface-variant rounded-full font-body-sm">Shopping</span>
+</td>
+<td class="px-8 py-4 font-body-lg">Apple Store Ginza</td>
+<td class="px-8 py-4 font-body-sm text-on-surface-variant">Apple Pay</td>
+<td class="px-8 py-4 text-right font-data-mono text-error">-¥1,299.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-8 py-4 bg-surface-container-low text-center">
+<button class="font-label-caps text-on-surface-variant hover:text-primary transition-colors">LOAD MORE TRANSACTIONS</button>
+</div>
+</section>
+</div>
+</main>
+<!-- FAB Action (Contextual) -->
+<button class="fixed bottom-10 right-10 w-16 h-16 rounded-full bg-primary text-on-primary shadow-xl flex items-center justify-center hover:scale-110 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</body></html>
