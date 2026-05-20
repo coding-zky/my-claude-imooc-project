@@ -1,51 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>登录 - 记账本</title>
-  <link rel="stylesheet" href="../css/style.css"/>
-</head>
-<body data-page="login">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>登录 - 记账本（测试）</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body data-page="login">
+    <div id="app">
+      <div class="page-content auth-page">
+        <div class="auth-logo">🏦</div>
+        <h1 class="auth-title">记账本</h1>
 
-<div id="app">
-  <div class="page-content auth-page">
-    <div class="auth-logo">🏦</div>
-    <h1 class="auth-title">记账本</h1>
+        <div class="auth-card">
+          <div style="text-align: center; margin-bottom: var(--space-lg)">
+            <div
+              style="font-size: 3rem; margin-bottom: var(--space-sm)"
+              id="login-avatar"
+            >
+              👤
+            </div>
+            <div
+              style="font-size: 1.1rem; font-weight: 700"
+              id="login-nickname"
+            >
+              用户
+            </div>
+            <p
+              style="
+                font-size: 0.85rem;
+                color: var(--text-secondary);
+                margin-top: 4px;
+              "
+            >
+              请输入你的 PIN 码
+            </p>
+          </div>
 
-    <div class="auth-card">
-      <div style="text-align:center;margin-bottom:var(--space-lg);">
-        <div style="font-size:3rem;margin-bottom:var(--space-sm);" id="login-avatar">👤</div>
-        <div style="font-size:1.1rem;font-weight:700;" id="login-nickname">用户</div>
-        <p style="font-size:0.85rem;color:var(--text-secondary);margin-top:4px;">请输入你的 PIN 码</p>
-      </div>
+          <div id="pin-dots" class="pin-dots"></div>
 
-      <div id="pin-dots" class="pin-dots"></div>
+          <div id="pin-keypad" class="num-keypad">
+            <button data-key="1">1</button>
+            <button data-key="2">2</button>
+            <button data-key="3">3</button>
+            <button data-key="4">4</button>
+            <button data-key="5">5</button>
+            <button data-key="6">6</button>
+            <button data-key="7">7</button>
+            <button data-key="8">8</button>
+            <button data-key="9">9</button>
+            <button data-key="delete" class="key-delete">⌫</button>
+            <button data-key="0">0</button>
+            <button data-key="confirm" class="key-confirm">✓</button>
+          </div>
+        </div>
 
-      <div id="pin-keypad" class="num-keypad">
-        <button data-key="1">1</button>
-        <button data-key="2">2</button>
-        <button data-key="3">3</button>
-        <button data-key="4">4</button>
-        <button data-key="5">5</button>
-        <button data-key="6">6</button>
-        <button data-key="7">7</button>
-        <button data-key="8">8</button>
-        <button data-key="9">9</button>
-        <button data-key="delete" class="key-delete">⌫</button>
-        <button data-key="0">0</button>
-        <button data-key="confirm" class="key-confirm">✓</button>
+        <button
+          style="
+            margin-top: var(--space-lg);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font);
+          "
+          id="btn-forgot-pin"
+        >
+          忘记 PIN？<span style="color: var(--expense); font-weight: 600"
+            >[重置数据]</span
+          >
+        </button>
       </div>
     </div>
 
-    <button style="margin-top:var(--space-lg);font-size:0.8rem;color:var(--text-secondary);background:none;border:none;cursor:pointer;font-family:var(--font);"
-            id="btn-forgot-pin">
-      忘记 PIN？<span style="color:var(--expense);font-weight:600;">[重置数据]</span>
-    </button>
-  </div>
-</div>
-
-<script src="../js/storage.js"></script>
-<script src="../js/app.js"></script>
-</body>
+    <script src="../js/storage.js"></script>
+    <script src="../js/app.js"></script>
+  </body>
 </html>
